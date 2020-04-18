@@ -1,0 +1,3 @@
+/*
+reference to const string object
+*/
