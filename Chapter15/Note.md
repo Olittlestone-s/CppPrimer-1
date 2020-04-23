@@ -28,3 +28,10 @@
 * 通过域操作符显式指定要调用的虚函数（避免动态绑定，比如在子类中调用父类的函数）
 * 将虚函数的函数体设置为`= 0`可以将函数声明为“纯虚函数”，拥有纯虚函数的类称为抽象类，抽象类不能被实例化！
 * 纯虚函数可有函数体，但必须在类外定义！
+* 继承到的protected成员对friend不可见！
+* friend关系不可被继承！
+* 在子类中可以使用`using`声明保留继承所得到成员的访问级别
+* class默认private继承；struct默认public继承
+* 继承使子类的class scope“嵌套”在父类的class scope中，name lookup发生在编译时
+* 子类会隐藏父类中声明的同名成员，子类应该避免成员隐藏！
+* destructor应该是virtual的，否则delete basePtr时，如果basePtr的静态类型与动态类型不符，那么就无法正确执行适当的destructor
