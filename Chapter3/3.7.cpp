@@ -12,9 +12,15 @@ using std::string;
 
 int main(){
     string str;
-    cin >> str;
-    for(char ch : str){
-        ch = 'X'; //修改的local variable ch本身，而不是str中对应的字符
+    getline(cin,str);
+    int len = str.size();
+    for(char i = 0;i < len;i++)     
+    //算术表达式隐式转换顺序为：
+    //1、char - int - long - double
+    //2、float - double
+    {
+        if(str[i] != ' ')
+        str[i] = 'X';
     }
     cout << str << endl;
     return 0;
