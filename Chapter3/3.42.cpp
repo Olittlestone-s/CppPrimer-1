@@ -1,20 +1,29 @@
-#include <iostream>
-#include <vector>
-
-using std::vector;
-using std::cout;
-using std::endl;
-
+#include<iostream>
+#include<vector>
+using namespace std;
 int main(){
-    vector<int> vec{1, 2, 3, 4, 5};
-    int arr[10] = {};
-    size_t index = 0;
-    while(index < 3){
-        arr[index++] = vec[index];
+    int arr[] = { 1, 3, 5, 7, 9, 2, 4, 6, 8};
+    vector<int>res(begin(arr),end(arr));//将数组中的元素复制到向量中
+    for(auto &i:res){
+        cout<<i<<" ";
     }
-    for(auto i : arr){
-        cout << i << ' ';
+    int array[9];
+    int *p = begin(array);
+    int *q = end(array);
+    auto it = res.begin();
+    auto en = res.end();
+    while (p!=q && it != en)//进行元素的复制操作
+    {
+        *p = *it;
+        p++;
+        it++;
+        /* code */
     }
-    cout << endl;
+    cout<<endl;
+    for(auto &elem:array){//元素进行遍历操作
+        cout<<elem<<" ";
+    }
+    cout<<endl;
     return 0;
+    
 }
