@@ -27,5 +27,23 @@ int main(){
         cout << endl;
     }
     cout << endl;
+    cout <<"**********************************************************************"<<endl;
+    int A[][3] = {1,2,3,4,5,6,7,8,9};
+    cout<<"1"<<endl;
+    using int_array = int[3];
+    for(int_array *p= A;p != A + 3;++p){
+        for(int *q = *p;q != *p+3;q++){
+            cout<<*q<<' ';
+        }
+        cout<<endl;
+    }
+    cout<<"2"<<endl;
+    typedef int int_array2[3];
+    for(int_array2 *p= A;p != A + 3;++p){
+        for(int *q = *p;q != *p+3;q++){
+            cout<<*q<<' ';
+        }
+        cout<<endl;
+    }
     return 0;
 }
