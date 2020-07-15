@@ -4,7 +4,7 @@ using std::cout;
 using std::endl;
 
 /*
-等价于：(i != (j < k))
+等价于：(i != j） < k
 */
 
 int main(){
