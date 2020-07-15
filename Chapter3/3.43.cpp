@@ -3,8 +3,8 @@ using namespace std;
 int main(){
     int A[][3] = {1,2,3,4,5,6,7,8,9};
     cout<<"1"<<endl;
-    for(size_t (&elem)[3]:A){//引用
-        for(size_t i:elem){
+    for(int (&elem)[3]:A){//引用
+        for(int i:elem){
             cout<<i<<' ';
         }
         cout<<endl;
