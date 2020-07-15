@@ -17,5 +17,11 @@ int main(){
         cout << endl;
     }
     cout << endl;
+    for(auto &elem:A){
+        for(auto i:elem){
+            cout<<i<<" ";
+        }
+        cout<<endl;
+    }
     return 0;
 }
