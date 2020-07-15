@@ -3,3 +3,10 @@
 所以`5 + 10 * 20/2`等价于`(5 + ((10 * 20) / 2))`，其结果是
 105
 */
+#include<iostream>
+using namespace std;
+int main(){
+    int sum = 5+10*20/2;
+    cout<<sum<<endl;
+    return 0;
+}
