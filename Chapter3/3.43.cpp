@@ -1,37 +1,32 @@
-#include <iostream>
-
-using std::cout;
-using std::endl;
-
+#include<iostream>
+using namespace std;
 int main(){
-    int ia[3][4] = { // three elements; each element is an array of size 4
-        {0, 1, 2, 3}, // initializers for the row indexed by 0
-        {4, 5, 6, 7}, // initializers for the row indexed by 1
-        {8, 9, 1, 2} // initializers for the row indexed by 2
-    };
-    //使用range-for打印数组
-    for(const auto &row : ia){
-        for(auto col : row){
-            cout << col << ' ';
+    int A[][3] = {1,2,3,4,5,6,7,8,9};
+    cout<<"1"<<endl;
+    for(size_t (&elem)[3]:A){//引用
+        for(size_t i:elem){
+            cout<<i<<' ';
         }
-        cout << endl;
+        cout<<endl;
     }
-    cout << endl;
-    //使用下标打印多维数组
-    for(size_t row_index = 0; row_index < 3; ++row_index){
-        for(size_t col_index = 0; col_index < 4; ++col_index){
-            cout << ia[row_index][col_index] << ' ';
+    cout<<"2"<<endl;
+    for(size_t i = 0;i < 3;i++){//下标
+        for(size_t j = 0;j < 3;j++){
+            cout<<A[i][j]<<' ';
         }
-        cout << endl;
+        cout<<endl;
     }
-    cout << endl;
-    //使用指针打印多维数组
-    for(int (*pRow)[4] = ia; pRow != ia + 3; ++pRow){
-        for(int *pCol = *pRow; pCol < *pRow + 4; ++pCol){
-            cout << *pCol << ' ';
+    // using int_array = int[4];
+    // typedef int int_array[4];
+    cout<<"3"<<endl;
+    using int_array = int[3];
+
+    // for(int (*p)[3] = A;p != A + 3;++p){
+    for(int_array *p= A;p != A + 3;++p){//指针
+        for(int *q = *p;q != *p+3;q++){
+            cout<<*q<<' ';
         }
-        cout << endl;
+        cout<<endl;
     }
-    cout << endl;
     return 0;
 }
