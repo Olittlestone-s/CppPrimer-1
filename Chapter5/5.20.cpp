@@ -23,3 +23,35 @@ int main(){
     }
     return 0;
 }
+
+/***************************************************************************************/
+#include<iostream>
+#include<vector>
+#include<set>
+
+using namespace std;
+int main(){
+    string str;
+    set<string>ss;
+    int size = 0;
+    string curr;
+    int temp = 0;
+    while (cin>>curr)
+    {
+        ss.insert(curr);
+        temp = ss.size();
+        if(size != temp || curr[0]<'A'||curr[0]>'Z'){
+            size = temp;
+        }else{
+            str = curr;
+            break;
+        }
+        /* code */
+    }
+    cout<<str<<endl;
+    for(auto i:ss){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
