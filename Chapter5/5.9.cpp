@@ -1,18 +1,28 @@
-#include <iostream>
-
-using std::cin;
-using std::cout;
-using std::endl;
-
+#include<iostream>
+using namespace std;
 int main(){
-    int vowelCnt = 0;
-    char ch;
-    while(cin >> ch){
-        ch = tolower(ch);
-        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
-            ++vowelCnt;
+    string str;
+    while(getline(cin,str)){
+        int length = str.length();
+        int i = 0;
+        int count = 0;
+        while(i < length){
+            switch (str[i])
+            {
+            case 'a':case 'e':case 'i':case 'o':case 'u':case 'A':case 'E':case 'I':case 'O':case 'U':
+            {
+                cout<<str[i];
+                count ++; 
+                break;
+            }
+            default:
+            cout<<" ";
+            }
+            i++;
         }
+        cout<<endl;
+        cout<<str<<endl;
+        cout<<"the element of str is:"<<count<<endl;
     }
-    std::cout << vowelCnt << endl;
     return 0;
 }
